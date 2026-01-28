@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard 1</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+<a href="/" class="back-btn">← Back To Home Page</a>
+
+<header>
+<img src="{{ url_for('static', filename='databricks.jpg') }}">
+<div>
+<h1>Unified AI Drug Demand Forecasting</h1>
+<p class="subtitle">Historical Trends</p>
+</div>
+</header>
+
+<button onclick="window.location.href='second_dashboard.html'" class="switch-btn">Go to Predicted Dashboard →</button>
+
+<div class="dashboard-box">
+<h3>📈 Dashboard 1-Historical Disease & Drug Trends</h3>
+<iframe src="https://dbc-69ad6c24-a9b6.cloud.databricks.com/embed/dashboardsv3/01f0eede91441028b743b1bcfa5e8a25?o=3585294623605796"
+            width="100%" height="700" frameborder="0"></iframe>
+</div>
+</div>
+
+<!-- Chatbot -->
+<div id="chatbot">
+<div id="chatbot-header">🧞 Genie <div><button onclick="clearChat()">🧹</button><button onclick="toggleChat()">✖</button></div></div>
+<div id="chatMessages"><div class="bot-message message"><b>Genie:</b> Hi! Ask about predictions, disease trends, or medicine demand 😊</div></div>
+<div id="chatInputArea"><input id="chatInput" onkeypress="handleKeyPress(event)"><button id="sendBtn" onclick="sendMessage()">Send</button></div>
+</div>
+<button id="chatToggleBtn" onclick="toggleChat()">🧞</button>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
